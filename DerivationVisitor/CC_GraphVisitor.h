@@ -11,17 +11,17 @@
 
 class CC_GraphVisitor : public GraphVisitor {
 private:
-    int verCnt;
-    int startIdx{};
-    int *ccIds;
+    int verCnt;// 顶点数
+    int startIdx{};// 用于记录正在遍历到的连通分量的起始点
+    vector<int> ccIds;// 用于记录答案的数组
 public:
     explicit CC_GraphVisitor(int N) {
         this->verCnt = N;
-        ccIds = new int[N];
+        ccIds.resize(N);
     }
 
     ~CC_GraphVisitor() {
-        delete[] ccIds;
+        ccIds.clear();
     }
 
     // visit的时候，可以通过graph的接口，获取相关的信息，比如vIdx顶点的出边，
@@ -38,7 +38,7 @@ public:
     void outputCCIds() {
         // 进行输出
         for (int i = 0; i < this->verCnt; i++)
-            std::cout << this->ccIds[i] << " ";
+            cout << this->ccIds[i] << " ";
     }
 };
 

@@ -82,6 +82,7 @@ void DFS(int v, int* color, GraphVisitor *preVisitor, GraphVisitor *postVisitor)
 + git配置文件 .gitignore
 + 目录清单 catalogue.md
 + Debug文件夹 cmake-build-debug
++ integration.md 整合的单算法代码cpp文件,可用于OJ等地方
 + BasicsVisitor文件夹,包含:
 
 1. IntList.h 链表类的创建
